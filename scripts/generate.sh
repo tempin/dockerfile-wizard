@@ -24,6 +24,10 @@ if [ ! -e $NODE_VERSION_NUM ] ; then
     make install && \
     cd .. && \
     rm -r node-v$NODE_VERSION_NUM"
+
+    echo "# install yarn
+      RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+    "
 fi
 
 if [ ! -e $PYTHON_VERSION_NUM ] ; then
