@@ -25,8 +25,8 @@ if [ ! -e $NODE_VERSION_NUM ] ; then
     cd .. && \
     rm -r node-v$NODE_VERSION_NUM"
 
-    echo "# install yarn
-      RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+    echo "RUN apt-get install -y npm && \
+      npm install --global yarn
     "
 fi
 

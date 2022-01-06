@@ -6,7 +6,7 @@ image_config: &image_config
 
   IMAGE_NAME: tempin
 
-  IMAGE_TAG: ruby-3.1.0-node-14.17.3
+  IMAGE_TAG: ruby-3.1.0-node-14.17.3-2
 
   # NOTE: if you're modifying this config.yml file manually
   # rather than using the included setup script,
