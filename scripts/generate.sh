@@ -12,6 +12,10 @@ if [ ! -e $RUBY_VERSION_NUM ] ; then
     make -j4 && \
     make install && \
     ruby -v"
+
+
+    echo "RUN apt-get install -y imagemagick"
+
 fi
 
 if [ ! -e $NODE_VERSION_NUM ] ; then
@@ -108,7 +112,7 @@ RUN if [ \$(grep 'VERSION_ID="8"' /etc/os-release) ] ; then \\
     echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list && \\
     apt-get update && apt-get -y install -t jessie-backports xvfb phantomjs \\
 ; else \\
-		apt-get update && apt-get -y install xvfb phantomjs \\
+    apt-get update && apt-get -y install xvfb phantomjs \\
 ; fi
 EOF
 echo "ENV DISPLAY :99"
@@ -135,4 +139,9 @@ RUN apt-get -y install libgconf-2-4 \
   && rm -rf chromedriver_linux64.zip \
   && mv chromedriver /usr/local/bin/chromedriver \
   && chmod +x /usr/local/bin/chromedriver"
+
+
+echo "# install cypress dependencies
+RUN apt-get update && sudo apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+"
 fi
